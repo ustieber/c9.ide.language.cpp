@@ -178,6 +178,9 @@ define(function(require, exports, module) {
 
     // Propagate clang diagnostics
     cpp_worker.analyze = function(value, ast, callback) {
+        // Do not push clang diagnostics for the time being
+        return callback([]);
+
         // create a unique numeric id to identify correct callback relationships
         var cId = ++uId;
 
